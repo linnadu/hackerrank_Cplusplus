@@ -1,0 +1,44 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <string>
+using namespace std;
+class English_Repr{
+    int n;
+    string results;
+    public: 
+        void set_value(int);
+        string transfer(){
+            if (n==1){results="one";}
+            else if (n==2){results="two";}
+            else if (n==3){results="three";}
+            else if (n==4){results="four";}
+            else if (n==5){results="five";}
+            else if (n==6){results="six";}
+            else if (n==7){results="seven";}
+            else if (n==8){results="eight";}
+            else if (n==9){results="nine";}
+            else if ((n>9)&&(n%2==0)) {results="even";}
+            else {results="odd";}
+           
+          return results;
+        }  
+};
+
+void English_Repr::set_value(int input){ n=input;}
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int a,b;
+    scanf("%d\n%d", &a, &b);
+    
+   
+    for (int i=a; i<=b; i++){
+         English_Repr englishrep;
+         englishrep.set_value(i);
+         cout<<englishrep.transfer()<<endl;
+   }
+    return 0;
+}
